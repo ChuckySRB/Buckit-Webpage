@@ -1,1 +1,145 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Color Variables
+@white: #F2F5F5;
+@card: #1C1945;
+@blueHover: #2A318F;
+@background1: #160F29;
+@background2: #1F1144;
+@background_80: rgba(31, 17, 68, 0.8);
+@background3: #26125B;
+@backgroundTopRight: #21224f;
+@backgroundBottomLeft: #160f29;
+@background: #21224f;
+@yellowLight: #F9F589;
+@yellow: #E9CD06;
+@orange: #D84B21;
+@red: #c93042;
+@purple: #812747;
+@blue: #231f53;
+@grey: #ADADAD;
+@window: #15123F;
+@blueButton: #2AA9A9;
+@textInput: #16133B;
+@whiteYellow: #F0EECD;
+@whiteGrey: #D4D4D4;
+@black: #000000;
+@transparent: transparent;
+
+
+// Import custom font
+@font-face {
+    font-family: 'GillSansMT';
+    src: url('assets/fonts/GillSansMT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// Base
+body {
+    margin: 0;
+    font-family: 'Gill Sans MT', sans-serif;
+    background: linear-gradient(to bottom right, @background1, @background2);
+    color: @white;
+  }
+  
+  // Hero Section
+  .hero {
+    background: linear-gradient(to bottom right, @backgroundTopRight, @backgroundBottomLeft);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .overlay {
+      padding: 2rem;
+    }
+    .app-title {
+      font-size: 4rem;
+      margin: 0;
+      color: @yellow;
+    }
+    .tagline {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      color: @white;
+    }
+    .hero-buttons {
+      margin-top: 1.5rem;
+    }
+  }
+  
+  // Buttons
+  .btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin: 0.5rem;
+    &.primary {
+      background: @blueButton;
+      color: @white;
+      &:hover { background: @blueHover; }
+    }
+    &.secondary {
+      background: transparent;
+      border: 2px solid @blueButton;
+      color: @blueButton;
+      &:hover { background: @blueButton; color: @white; }
+    }
+    &.store {
+      background: @yellow;
+      color: @background;
+      &:hover { background: darken(@yellow, 10%); }
+    }
+  }
+  
+  // Sections
+  .section {
+    padding: 4rem 2rem;
+    text-align: center;
+    h2 {
+      color: @yellow;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .features {
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      background: @card;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 250px;
+      h3 { color: @yellow; }
+      p { color: @white; }
+    }
+  }
+  
+  // Footer
+  .footer {
+    background: @window;
+    padding: 2rem;
+    text-align: center;
+    .links {
+      margin-top: 1rem;
+      a {
+        margin: 0 10px;
+        color: @grey;
+        text-decoration: none;
+        &:hover { color: @yellow; }
+      }
+    }
+  }
