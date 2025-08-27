@@ -46,27 +46,78 @@ body {
   
   // Hero Section
   .hero {
+    padding-top: 20px;
+    padding-bottom: 70px;
     background: linear-gradient(to bottom right, @backgroundTopRight, @backgroundBottomLeft);
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 2rem;
+      width: min(1100px, 92%);
+      margin-inline: auto;
+    }
     .overlay {
       padding: 2rem;
     }
     .app-title {
-      font-size: 4rem;
+      font-size: clamp(2.5rem, 5vw, 4rem);
       margin: 0;
       color: @yellow;
     }
     .tagline {
-      font-size: 1.5rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       margin-top: 0.5rem;
       color: @white;
     }
     .hero-buttons {
       margin-top: 1.5rem;
+    }
+
+    .phone-mockup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .device {
+      position: relative;
+      width: 280px;
+      height: 560px;
+      border-radius: 36px;
+      background: @background1 - #080808;
+      padding: 14px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 0 0 2px rgba(255,255,255,0.05);
+      border: 1px solid rgba(255, 255, 255, 0.121);
+    }
+    .device img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+      display: block;
+    }
+    .notch {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 18px;
+      background: @background1 - #080808;;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {height: 100vh; padding-bottom: 50px;}
+      .hero-inner {height: 100lvh; grid-template-columns: 1fr; gap: 0px; }
+      .phone-mockup {  order: -1; margin-bottom: 1rem; }
+      .hero-buttons { display: flex; flex-direction: column; width: 70%; justify-self: center;}
     }
   }
   
@@ -128,6 +179,35 @@ body {
     }
   }
   
+  // Download
+  .download .download-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .qr-card {
+    background: @card;
+    padding: 1rem 1rem 0.75rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .qr-card img {
+    width: 180px;
+    height: 180px;
+    display: block;
+    border-radius: 10px;
+  }
+  .qr-card p {
+    margin-top: 0.5rem;
+    color: @whiteGrey;
+    font-size: 0.95rem;
+  }
+  
   // Footer
   .footer {
     background: @window;
@@ -141,5 +221,42 @@ body {
         text-decoration: none;
         &:hover { color: @yellow; }
       }
+
+      @media (max-width: 900px) {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
     }
   }
+
+
+.back{
+  a{ 
+    color: @yellowLight;
+  }
+  padding: 20px;
+}
+
+#pp {
+  strong {
+    color: @yellow;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .bottom-text {
+    padding-top: 3rem;
+  }
+
+  a {
+    color: @yellowLight;
+  }
+  
+
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+

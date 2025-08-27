@@ -1,59 +1,68 @@
-# Webpage
+# Buckit Landing Page
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+An Angular-based marketing landing page for the Buckit mobile app.
 
-## Development server
+The page showcases the app with a modern hero section, an Android phone mockup featuring a live screenshot, and a QR code that links directly to the Google Play listing. It also includes sections for About, Features, and a Download call-to-action.
 
-To start a local development server, run:
+## Purpose
+
+This site serves as the public-facing homepage for Buckit — a place to briefly explain the product, visually demonstrate the UI, and provide a fast path to install via QR code or store button.
+
+## Tech Stack
+
+- Angular 19
+- Global styles with Less (`src/styles.less`)
+- Assets under `src/assets/`
+
+## Local Development
+
+Start the dev server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open `http://localhost:4200/`.
 
-## Code scaffolding
+Hot reload is enabled for changes in `src/`.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Build
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Create a production build:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Artifacts are emitted to `dist/` and optimized for performance.
 
-## Running unit tests
+## Page Structure
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Hero: headline, tagline, primary/secondary buttons, and a right-aligned Android phone mockup (`assets/images/Screenshot2.png`).
+- About: short blurb on what Buckit does.
+- Features: three highlight cards.
+- Download: Google Play button and a QR code that opens the Play Store listing.
+- Footer: links including a router-based privacy policy at `/privacy-policy`.
 
-```bash
-ng test
-```
+All markup is in `src/app/app.component.html`. Global styles are in `src/styles.less`.
 
-## Running end-to-end tests
+## Customization
 
-For end-to-end (e2e) testing, run:
+- Colors: edit variables at the top of `src/styles.less` (e.g., `@yellow`, `@blueButton`, backgrounds). These drive gradients, buttons, cards, and the device mockup.
+- Phone Screenshot: replace `src/assets/images/Screenshot2.png` and ensure the `<img>` path in the hero matches.
+- QR Code: the QR is generated in Canva
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Routing
 
-## Additional Resources
+The footer uses an Angular route for the privacy policy (`/privacy-policy`). Make sure a corresponding route and component exist in your app routing if you plan to use it.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Project Scripts
+
+- `ng serve` — run locally
+- `ng build` — production build
+- `ng test`, `ng e2e` — testing hooks (configure if needed)
+
+## License
+
+Proprietary. All rights reserved. Replace this section if you intend to open source any part of the site.
