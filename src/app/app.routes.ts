@@ -8,5 +8,10 @@ export const routes: Routes = [
     {
         path: 'privacy-policy',
         loadComponent: () => import('./components/privacy-policy/privacy-policy.component').then(m => m.PrivacyPolicyComponent)
+    },
+    {
+        path: '**',
+        redirectTo: '',
+        pathMatch: 'full'
     }
 ];
