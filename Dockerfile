@@ -20,4 +20,4 @@ COPY --from=buckit /app/dist/webpage/browser /usr/share/nginx/html
  
 
 # Build: docker build -t buckit .
-# Run: docker run --name buckit -d -p 8081:80 -p 8091:443 buckit
+# Run: docker run --name buckit-web -d -p 8081:80 -p 8091:443 buckit
