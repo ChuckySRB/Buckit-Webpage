@@ -13,10 +13,15 @@ RUN npm run build
 # 4: Sad mi treba nginx image
 FROM nginx:latest
 
+# 5: Copy nginx.conf, private key, certificate
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./www.chuckylab.com.key /etc/ssl/private/server.key
-COPY ./www.chuckylab.com.crt /etc/ssl/certs/server.crt
+COPY ./private/www.chuckylab.com.key /etc/ssl/private/server.key
+COPY ./private/www.chuckylab.com.crt /etc/ssl/certs/server.crt
+
+# 6: Copy build files and google ads.txt
 COPY --from=buckit /app/dist/webpage/browser /usr/share/nginx/html
+COPY ./private/app-ads.txt /usr/share/nginx/html/app-ads.txt
+
  
 
 # Build: docker build -t buckit .
