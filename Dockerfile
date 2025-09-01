@@ -14,8 +14,10 @@ RUN npm run build
 FROM nginx:latest
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./www.chuckylab.com.key /etc/ssl/private/server.key
+COPY ./www.chuckylab.com.crt /etc/ssl/certs/server.crt
 COPY --from=buckit /app/dist/webpage/browser /usr/share/nginx/html
  
 
 # Build: docker build -t buckit .
-# Run: docker run -d -p 8080:80 buckit
+# Run: docker run --name buckit -d -p 8081:80 -p 8091:443 buckit
